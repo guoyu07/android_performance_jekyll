@@ -1,0 +1,5 @@
+pygments: true
+markdown: redcarpet
+exclude:	[console.bat, build.bat, demo]
+
+encoding: UTF-8

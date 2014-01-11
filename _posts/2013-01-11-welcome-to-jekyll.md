@@ -2,7 +2,7 @@
 layout: post
 title:  "读懂 javap -verbose"
 date:   2014-01-11 18:02:01
-categories: jekyll update
+categories: java
 ---
 
 

@@ -1,2 +1,2 @@
-jekyll build
+jekyll build -w
 @pause

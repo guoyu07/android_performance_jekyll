@@ -9,7 +9,7 @@ categories: java
 javap是jdk自带的一个工具，可以反编译class文件，是我们在做java代码性能分析时必不可少的一个工具。
 我们先写个简单的代码，然后我们在逐个分析 javap 解析出来的内容。
 
-{% highlight ruby %}
+{% highlight java linenos %}
 public class TestJavap {
 
     public static int add(int a, int b) {
@@ -182,7 +182,7 @@ Constant Pool （常量池），在java虚拟机中是个重要的概念。我�
 下面是重点，我们会详细介绍方法字节码表示的含义。
 比如方法 add 对应的java代码和字节码表示为：
 
-{% highlight ruby %}
+{% highlight java linenos %}
 public static int add(int a, int b) {
 	int r = a + b;
 	return r;
@@ -223,7 +223,7 @@ public static int add(int a, int b) {
 
 我们在深入一点，把a，b和r都换成Long类型，在javap -v 一下，看看会变成什么样子：
 代码：
-{% highlight ruby %}
+{% highlight java linenos %}
 public static long add(long a, long b) {
 	long r = a + b;
 	return r;

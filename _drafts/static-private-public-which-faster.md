@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Java中static、private、public 方法哪个更快"
+title:  "Java中static、private、public 方法哪个更快[draft]"
+date:   2014-01-17 09:24:01
 categories: java
 ---
 
@@ -8,7 +9,7 @@ categories: java
 
 我们有下面三段代码，运算逻辑相同，我们分别用static, private, public 来声明，然后分别对他们的运行时间：
 
-{% highlight ruby %}
+{% highlight java  %}
 public class TestStatic {
 
     static long add(long a, long b) {
@@ -26,7 +27,8 @@ public class TestStatic {
 
 {% endhighlight %}
 
-{% highlight ruby %}
+
+{% highlight java  %}
 public class TestPrivate {
 
     private long add(long a, long b) {
@@ -46,7 +48,7 @@ public class TestPrivate {
 {% endhighlight %}
 
 
-{% highlight ruby %}
+{% highlight java  %}
 public class TestPublic {
 
     public long add(long a, long b) {
@@ -229,14 +231,14 @@ public 实现中 add 方法的部分字节码：
 
 可以看到几个 add 方法字节码（Code部分）的实现几乎是一样的，而在调用这几个方法时jvm使用了 `invokestatic`，`invokespecial` 和 `invokevirtual` 三种不同的虚拟机指令。表1中的性能差异主要就是由这几条指令的操作方式所决定的，invokestatic 指令是基于**方法**（在编译时就知道该调用哪个方法）的指令，在进行栈帧切换（可以理解方法切换）时只需要把方法的参数入栈即可，从 “static 实现中 add 方法的字节码” 中我们可以看到其 LocalVariableTable（局部变量表）中只有a、b两个值。而 invokespecial 和 invokevirtual 是基于**实例**的指令，他们处理把a、b两个参数入栈之外，还要把对实例的引用（this指针）也同时入栈，所以在private和public实现方式的add方法字节码中，LocalVariableTable 还包括了this指针。所以这一点点额外的操作就决定了他们的性能差别。
 
->更多关于字节码的解释可参考之前的一篇文章[《读懂 javap -verbose 》][link_javap]     
+>更多关于字节码的解释可参考之前的一篇文章 [《读懂 javap -verbose 》](/java/2014/01/11/javap-verbose.html)    
   
 >关于 invokestatic 、invokespecial、invokevirtual 这几个指令的详解，可参考 [http://docs.oracle.com/javase/specs/jvms/se7/html/jvms-6.html][link1]
 
 
 invokespecial 和 invokevirtual 在上面的例子并没有体现出明显的差别。我们再举一个例子比较一下，在这里例子中我们引入多态特性。我们把 TestPublic 改造一下，代码如下：
 
-{% highlight ruby %}
+{% highlight java  %}
 
 class TestBaseClass{
     public long add(long a, long b) {

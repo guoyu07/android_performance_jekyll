@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Android 性能小贴士[draft]"
+title:  "Android 性能小贴士"
 date:   2014-01-26 09:24:01
 categories: android
 ---

@@ -2,15 +2,42 @@
 layout: default
 ---
 
-<h2>{{ page.title }} </h2>
-<p class="meta">{{ page.date | date: "%Y-%m-%d %H:%M:%S" }}</p>
 
-<div class="post">
-	{{ content }}
+
+<div class="raw">
+	 <div class="col-md-8 post">
+		<h2>{{ page.title }} </h2>
+		<div class="meta">发表于 {{ page.date | date: "%Y-%m-%d %H:%M:%S" }}</div>
+		{{ content }}
+		<div class="ds-thread"></div>
+	 </div>
+	 <div class="col-md-4">
+	 	<div class="sideblock">
+	 		<h3>
+	 			最新文章
+	 		</h3>
+	 		<ul>
+	 			{% for post in site.posts limit:5 %}
+	 				<li><a href="{{post.url}}">{{post.title}}</a></li>
+	 			{% endfor %}
+	 		</ul>
+	 	</div>
+	 	<div class="sideblock">
+	 		<h3>
+	 			相关文章
+	 		</h3>
+	 		<ul>
+	 			{% for post in site.related_posts limit:5 %}
+	 				<li><a href="{{post.url}}">{{post.title}}</a></li>
+	 			{% endfor %}
+	 		</ul>
+	 	</div>
+	 </div>
 </div>
 
+
 <!-- Duoshuo Comment BEGIN -->
-	<div class="ds-thread"></div>
+	
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"androidperformance"};
 	(function() {

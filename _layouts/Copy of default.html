@@ -12,9 +12,28 @@
 
 <link rel="stylesheet" href="/assets/css/black.css" />
 <link rel="stylesheet" href="/assets/css/syntax.css" />
-<link rel="shortcut icon" href="/images/favicon.ico" />
+
 </head>
 <body>
+
+	<!-- nav bar -->
+	
+	<!-- 
+	<div class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<a href="/" class="navbar-brand"></i> Android-Performance.com</a>
+			<ul class="nav navbar-nav">
+	            <li class="active">
+					<a href="/" >首页</a>
+	            </li>
+	            <li>
+					<a href="/archive.html" >归档</a>
+	            </li>
+	          </ul>
+		</div>
+	</div>
+	 -->
+	
 
 	<!-- header -->
 	<div class="container">
@@ -26,19 +45,11 @@
 				<h1>Android-Performance.com</h1>
 				<h2>一个关注安卓性能优化以及最佳实践的Blog</h2>
 			</div>
-			<div class="nav">
-				<ul>
-					{% case page.path %}
-						  {% when 'index.html' %}{% assign index_active_class = "active" %}
-						  {% when 'archive.html' %}{% assign archive_active_class = "active" %}
-					{% endcase %}
-					<li>
-						<a href="/" class="{{index_active_class}}">主页</a></li>
-					<li>
-						<a href="/archive.html" class="{{archive_active_class}}">归档</a>
-					</li>
-				</ul>
+			<!-- 
+			<div id="nav">
+				<a href="/">主页</a>
 			</div>
+			 -->
 			 <div class="clearfix"></div>
 		</div>
 		

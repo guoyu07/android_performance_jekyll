@@ -1,2 +1,2 @@
-jekyll build -w
+jekyll build -w --safe
 @pause

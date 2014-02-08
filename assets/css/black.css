@@ -169,6 +169,7 @@ html{
 	padding-left: 20px;
 	list-style-image: url("/images/bullet.gif");
 	line-height: 2em;
+	font-size: 12px;
 }
 
 
@@ -198,9 +199,18 @@ html{
 	font-size: 12px;
 }
 
+.post li{
+	margin-left:4em;
+}
+
 
 #archive_list ul{
 	padding-left:20px;
 	list-style: none;
 	margin-bottom: 20px;
 }
+
+#sideblock_toc{
+	margin-left: 10px;
+}
+

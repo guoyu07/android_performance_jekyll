@@ -1,2 +1,2 @@
-jekyll serve -w -D
+jekyll serve -w -D --safe
 @pause

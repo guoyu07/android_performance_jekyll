@@ -8,10 +8,13 @@ layout: default
 	 <div class="col-md-8 post">
 		<h2>{{ page.title }} </h2>
 		<div class="meta">发表于 {{ page.date | date: "%Y-%m-%d %H:%M:%S" }}</div>
-		{{ content }}
+	 	<div id="main_content">
+		 {{ content }}
+	 	</div>
 		<div class="ds-thread"></div>
 	 </div>
 	 <div class="col-md-4">
+	 	<div id="sideblock_toc" style="display: none;"></div>
 	 	<div class="sideblock">
 	 		<h3>
 	 			最新文章
@@ -34,6 +37,9 @@ layout: default
 	 	</div>
 	 </div>
 </div>
+<script type="text/javascript">$('#main_content').toc({
+	containerDomId : 'sideblock_toc'
+});</script>
 
 
 <!-- Duoshuo Comment BEGIN -->

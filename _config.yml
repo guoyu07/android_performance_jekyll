@@ -4,5 +4,5 @@ exclude:	[console.bat, build.bat, demo, server.bat, server_draft.bat]
 
 encoding: UTF-8
 
-gems: []
-lsi: true
+#有 sort 错误
+#lsi: true

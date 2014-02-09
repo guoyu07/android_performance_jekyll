@@ -197,10 +197,17 @@ html{
 
 .post blockquote p{
 	font-size: 12px;
+	text-indent: 0;
 }
 
 .post li{
 	margin-left:4em;
+	margin-bottom: 1em;
+	padding-left: 0;
+}
+
+.post li p{
+	text-indent: 0;
 }
 
 
